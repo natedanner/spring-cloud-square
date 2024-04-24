@@ -193,7 +193,7 @@ public class WebClientRetrofitTests {
 				@RequestHeader(value = "Content-Type", required = false) MediaType contentType) {
 			Objects.requireNonNull(payload, "Payload can not be null");
 			Objects.requireNonNull(contentType, "Content type can not be null");
-			if (!payload.equals("Hello World") || !contentType.toString().equals("text/plain;charset=UTF-8")) {
+			if (!"Hello World".equals(payload) || !"text/plain;charset=UTF-8".equals(contentType.toString())) {
 				throw new IllegalArgumentException("Body was not processed correctly!");
 			}
 			return Mono.empty();

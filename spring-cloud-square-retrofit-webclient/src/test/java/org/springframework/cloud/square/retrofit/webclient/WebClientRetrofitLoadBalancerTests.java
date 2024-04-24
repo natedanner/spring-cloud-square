@@ -199,7 +199,7 @@ class WebClientRetrofitLoadBalancerTests {
 	protected static class TestAppConfig {
 
 		@LocalServerPort
-		private int port = 0;
+		private int port;
 
 		@Bean
 		public ServiceInstanceListSupplier staticServiceInstanceListSupplier() {

@@ -58,7 +58,7 @@ public class SpringConverterFactory extends Converter.Factory {
 			// MediaType contentType = getContentType(responseWrapper);
 			MediaType contentType = MediaType.APPLICATION_JSON; // TODO: determine
 			// dynamically?
-			Class<?> responseClass = (type instanceof Class) ? (Class<?>) type : null;
+			Class<?> responseClass = type instanceof Class ? (Class<?>) type : null;
 
 			for (HttpMessageConverter<?> messageConverter : this.messageConverters.getObject().getConverters()) {
 				if (messageConverter instanceof GenericHttpMessageConverter) {

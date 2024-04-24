@@ -111,12 +111,10 @@ public class WebClientCallAdapterFactory extends CallAdapter.Factory {
 				}
 
 				if (toEntity) {
-					Mono<Object> mono = clientResponse.flatMap(response -> response.toEntity(bodyType));
-					return mono;
+					return clientResponse.flatMap(response -> response.toEntity(bodyType));
 				}
 				else if (isFlux) {
-					Flux<Object> flux = clientResponse.flatMapMany(response -> response.bodyToFlux(bodyType));
-					return flux;
+					return clientResponse.flatMapMany(response -> response.bodyToFlux(bodyType));
 				}
 				else {
 					Mono<Object> mono = clientResponse.flatMap(response -> response.bodyToMono(bodyType));

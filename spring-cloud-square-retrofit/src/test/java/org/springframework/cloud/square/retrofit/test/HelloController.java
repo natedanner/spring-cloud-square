@@ -55,8 +55,7 @@ public abstract class HelloController implements TestConstants {
 
 	@RequestMapping(method = GET, path = "/hellos")
 	public List<Hello> getHellos() {
-		ArrayList<Hello> hellos = getHelloList();
-		return hellos;
+		return getHelloList();
 	}
 
 	@RequestMapping(method = GET, path = "/hellostrings")
